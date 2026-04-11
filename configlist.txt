@@ -1,0 +1,12 @@
+Terminal: Kitty
+App Launcher: Rofi
+File Manager: Thunar
+Browser: Zen Browser
+Wallpaper: Waypaper with awww background
+Media: vlc
+theme: nwg-look: Graphite-red-dark
+Larping: cava, btop, fastfetch
+audio: Pavucontrol
+WM: Hyrpland
+Font: CaskaydiaCove Nerd Mono Regular
+Icons: Papirus
