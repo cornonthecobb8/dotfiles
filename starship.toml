@@ -1,0 +1,42 @@
+# Starship configuration — Graphite Red Dark
+# Place this file at: ~/.config/starship.toml
+#
+# Color palette derived from vinceliuice/Graphite-gtk-theme (red-dark variant)
+#   Accent:     #c35b65  (theme red dark)
+#   Foreground: #dedede  (light grey text)
+#   Muted:      #888888  (secondary text)
+#   Git:        #a0a0a0  (neutral grey)
+#   Warning:    #e4b558  (yellow — Graphite warning)
+#   Error:      #c35b65  (accent red)
+#   Success:    #82ac5d  (Graphite green)
+
+# Main prompt format — directory and character on the same line
+format = """
+$directory$git_branch$git_status $character"""
+
+add_newline = false
+
+[directory]
+style = "bold #dedede"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+
+[character]
+success_symbol = "[>](#82ac5d bold)"
+error_symbol = "[>](#c35b65 bold)"
+
+[git_branch]
+symbol = " "
+style = "#a0a0a0"
+format = "[$symbol$branch]($style)"
+
+[git_status]
+style = "#e4b558"
+format = '([ \[$all_status$ahead_behind\]]($style))'
+ahead = "⇡${count}"
+behind = "⇣${count}"
+modified = "~"
+untracked = "?"
+staged = "+"
+deleted = "✘"
