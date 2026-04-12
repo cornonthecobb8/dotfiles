@@ -1,12 +1,13 @@
-Terminal: Kitty
-App Launcher: Rofi
+Terminal: Kitty | Customization: Starship
+App Launcher: Rofi | Custom config
 File Manager: Thunar
 Browser: Zen Browser
 Wallpaper: Waypaper with awww background
 Media: vlc
-theme: nwg-look: Graphite-red-dark
-Larping: cava, btop, fastfetch
+theme: nwg-look: Graphite-red-dark (gtk theme)
+Larping: cava, btop, fastfetch, cmatrix
 audio: Pavucontrol
 WM: Hyrpland
-Font: CaskaydiaCove Nerd Mono Regular
+Font: CaskaydiaCove Nerd Mono | Jetbrains Nerd Mono (terminal)
 Icons: Papirus
+Text Editor: Nvim | Custom config
