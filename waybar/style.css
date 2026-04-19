@@ -1,0 +1,233 @@
+/* ==========================================================
+ * Waybar Style — Graphite-Red-Dark
+ * Theme:  github.com/vinceliuice/Graphite-gtk-theme
+ * Variant: Red accent, Dark color scheme
+ * Font:   CaskaydiaCove Nerd Font (Cascadia Code NF)
+ * ========================================================== */
+
+/* ── Color reference (Graphite Dark + Red accent) ──
+ *  bg-dark:      #2c2c2c   (surface / base)
+ *  bg:           #333333   (background)
+ *  bg-light:     #3c3c3c   (base-alt / sidebar)
+ *  bg-lighter:   #454545   (button / entry)
+ *  fg:           #dedede   (primary text)
+ *  fg-dim:       #ababab   (secondary text)
+ *  fg-disabled:  #7b7b7b   (disabled text)
+ *  accent:       #db4646   (Graphite red — primary)
+ *  accent-hover: #e35b5b   (red lighter for hover)
+ *  border:       #454545   (frame / solid-border)
+ *  warning:      #ffa726   (orange-400)
+ *  error:        #ef5350   (red-400)
+ *  success:      #66bb6a   (green-400)
+ * ──────────────────────────────────────────────────── */
+
+/* ── Global bar ─────────────────────────────────────── */
+* {
+    font-size: 14px;
+    font-family: "CaskaydiaCove NFM", "CaskaydiaCove Nerd Font Mono", "Cascadia Code PL", monospace;
+    min-height: 0;
+    /* reset GTK margins/padding */
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #dedede;
+}
+
+/* The actual bar — one unified pill that floats away from edges */
+window#waybar > box {
+    background-color: #2c2c2c;
+    border: 1px solid #454545;
+    border-radius: 5px;
+    margin: 6px 8px 0 8px;   /* top, right, bottom, left — keeps bar off all edges */
+    padding: 0 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Shared module styling ──────────────────────────── */
+#custom-arch,
+#workspaces,
+#clock,
+#custom-spotify,
+#pulseaudio,
+#bluetooth,
+#custom-battery,
+#network,
+#custom-power {
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    transition: all 200ms ease;
+}
+
+/* Right-side icon modules — uniform width so glyphs of different
+ * widths all sit in equal slots and appear visually centered.
+ * GTK labels default to centered within their box when the box
+ * has extra width beyond the label's natural size. */
+#pulseaudio,
+#bluetooth,
+#custom-battery,
+#network,
+#custom-power {
+    min-width: 30px;
+    padding: 0 10px 0 8px;
+
+}
+
+/* ── Left modules ───────────────────────────────────── */
+
+/* Arch logo button */
+#custom-arch {
+    color: #db4646;
+    font-size: 18px;
+    padding: 0 10px 0 8px;
+}
+#custom-arch:hover {
+    background-color: rgba(219, 70, 70, 0.12);
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: #7b7b7b;
+    padding: 0 6px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    min-width: 20px;
+    transition: all 200ms ease;
+}
+
+#workspaces button label {
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces button:hover {
+    background-color: rgba(222, 222, 222, 0.08);
+    color: #ababab;
+}
+
+#workspaces button.active {
+    color: #db4646;
+    background-color: rgba(219, 70, 70, 0.15);
+}
+
+#workspaces button.urgent {
+    color: #ef5350;
+    background-color: rgba(239, 83, 80, 0.18);
+}
+
+/* ── Center modules ─────────────────────────────────── */
+
+#clock {
+    color: #db4646;
+    font-weight: 600;
+}
+#clock:hover {
+    background-color: rgba(222, 222, 222, 0.06);
+}
+
+/* Spotify */
+#custom-spotify {
+    color: #ababab;
+    font-style: italic;
+}
+#custom-spotify:hover {
+    color: #dedede;
+    background-color: rgba(222, 222, 222, 0.06);
+}
+
+/* ── Right modules ──────────────────────────────────── */
+
+/* Audio / PulseAudio */
+#pulseaudio {
+    color: #db4646;
+    font-size: 16px;
+}
+#pulseaudio:hover {
+    background-color: rgba(222, 222, 222, 0.06);
+}
+#pulseaudio.muted {
+    color: #7b7b7b;
+}
+
+/* Bluetooth */
+#bluetooth {
+    color: #db4646;
+    font-size: 16px;
+}
+#bluetooth:hover {
+    background-color: rgba(222, 222, 222, 0.06);
+}
+#bluetooth.off,
+#bluetooth.disabled,
+#bluetooth.no-controller {
+    /* Hidden when no device connected / off / no controller */
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+/* Battery (custom module with power-profile cycling) */
+#custom-battery {
+    color: #db4646;
+    font-size: 16px;
+}
+#custom-battery:hover {
+    background-color: rgba(222, 222, 222, 0.06);
+}
+#custom-battery.charging {
+    color: #66bb6a;
+}
+#custom-battery.warning {
+    color: #ffa726;
+}
+#custom-battery.critical {
+    color: #ef5350;
+    animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    to { color: #ff8a80; }
+}
+
+#network {
+    color: #db4646;
+    font-size: 16px;
+}
+#network:hover {
+    background-color: rgba(222, 222, 222, 0.06);
+}
+#network.disconnected {
+    color: #7b7b7b;
+}
+
+/* Power button */
+#custom-power {
+    color: #db4646;
+    font-size: 16px;
+    padding: 0 14px 0 8px;
+}
+#custom-power:hover {
+    background-color: rgba(219, 70, 70, 0.12);
+    color: #e35b5b;
+}
+
+/* ── Tooltip ────────────────────────────────────────── */
+tooltip {
+    background-color: #2c2c2c;
+    border: 1px solid #454545;
+    border-radius: 5px;
+    padding: 6px 10px;
+    color: #dedede;
+}
+
+tooltip label {
+    color: #dedede;
+}

@@ -1,0 +1,94 @@
+{
+    //General Configuration//
+
+    "layer": "top",
+    "position": "top",
+    "reload_style_on_change": true,
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["clock", "custom/spotify"],
+    "modules-right": ["pulseaudio", "bluetooth", "custom/battery", "network", "custom/power"],
+
+    //Module Configuration//
+    "custom/arch": {
+        "on-click": "kitty --hold -e fastfetch",
+        "format": "{icon}",
+        "format-icons": {"default": "󰣇"},
+        "tooltip": true,
+        "tooltip-format": "btw"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "format-icons": {
+            "active": "●",
+            "default": "○"
+        }
+    },
+    
+    "clock": {
+        "interval": 1,
+        "format": "{:%T}",
+        "format-alt": "{:%A, %B %d, %Y}"
+    },
+
+    "custom/spotify": {
+        "format": "  {}",
+        "return-type": "json",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
+        "exec": "~/.config/waybar/scripts/mediaplayer.py --player spotify",
+        "exec-if": "pgrep spotify"     
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "\uf6a9",
+        "format-icons": {
+            "default": ["\uf026", "\uf027", "\uf028"]
+        },
+        "tooltip-format": "{volume}% — {desc}",
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 5
+    },
+
+    "bluetooth": {
+        "format-on": "",
+        "format-off": "",
+        "format-disabled": "",
+        "format-connected": "\uf293",
+        "format-connected-battery": "\uf293 {device_battery_percentage}%",
+        "format-no-controller": "",
+        "tooltip-format-connected": "{device_alias}",
+        "tooltip-format-connected-battery": "{device_alias} — {device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/battery": {
+        "exec": "~/.config/waybar/scripts/battery-ppd.py",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "exec-on-event": false,
+        "on-click": "pkill -SIGRTMIN -f 'battery-ppd\\.py'"
+    },
+
+    "network": {
+        "interface": "wlp4s0",
+        "format": "{ifname}",
+        "format-wifi": "\uf1eb",
+        "format-disconnected": "\uf127",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "kitty --class=nmtui -e nmtui"
+    },
+
+    "custom/power": {
+       "format": "\uf011",
+       "tooltip": false,
+       "on-click": "~/.config/rofi/power-menu/power-menu.sh" 
+    }
+}
