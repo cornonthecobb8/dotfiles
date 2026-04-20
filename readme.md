@@ -17,8 +17,11 @@ run '''yay -S --needed - < aur-pkglist.txt'''
 run '''sudo pacman -S --needed - < pkglist.txt'''
 ## Step 4: Set Up System
 Move the kitty, nvim, rofi, waybar, and hypr folders, as well as starship.toml to the ~/.config folder. Accept any replacements.
-Make a ~/pics directory, and then make a subdirectory called ss. Also, move wallpaper folder into the ~/pics directory.
+Make a ~/pics directory, and then make a subdirectory called ss. Also, move wallpaper folder into the pics directory.
 move the tools folder into ~
 ## Step 5: Install Extras
 For photoshop: https://www.youtube.com/watch?v=aaTvRDsdy0s
 More extras to come
+
+# Example Images
+![Example Image](example.png)
