@@ -4,10 +4,11 @@ File Manager: Thunar
 Browser: Zen Browser
 Wallpaper: Waypaper with awww background
 Media: vlc
-theme: nwg-look: Graphite-red-dark (gtk theme)
+theme: nwg-look: Graphite-red-dark (gtk theme), papirus-dark-yaru
 Larping: cava, btop, fastfetch, cmatrix
 audio: Pavucontrol
 WM: Hyrpland
+bar: waybar
 Font: CaskaydiaCove Nerd Mono | Jetbrains Nerd Mono (terminal)
 Icons: Papirus
 Text Editor: Nvim | Custom config
