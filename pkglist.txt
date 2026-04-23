@@ -21,7 +21,6 @@ grub
 hyprland
 hyprpolkitagent
 kitty
-lib32-gamemode
 linux-firmware
 linux-zen
 linux-zen-headers
@@ -42,7 +41,6 @@ slurp
 sof-firmware
 spotify-launcher
 starship
-steam
 texinfo
 thunar
 ttf-jetbrains-mono-nerd

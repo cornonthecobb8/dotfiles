@@ -12,7 +12,7 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 '''
 Next, run '''sudo mkinitcpio -P''' and '''sudo grub-mkconfig -o /boot/grub/grub.cfg'''
 ## Step 3: Install Packages
--Make sure you have yay installed
+-Make sure you have yay installed (https://aur.archlinux.org/yay.git) then cd yay and makepkg -si
 run '''yay -S --needed - < aur-pkglist.txt'''
 run '''sudo pacman -S --needed - < pkglist.txt'''
 ## Step 4: Set Up System
