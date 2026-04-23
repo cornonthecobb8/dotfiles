@@ -1,0 +1,8 @@
+awcc-bin
+github-desktop-bin
+protonup-qt
+vesktop
+waypaper
+yay
+yay-debug
+zen-browser-bin
